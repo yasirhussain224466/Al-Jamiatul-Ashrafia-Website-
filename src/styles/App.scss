@@ -1,0 +1,499 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+$sidebar-bg-color: #1d1d1d;
+$submenu-bg-color: rgba(255, 255, 255, 0.05);
+$submenu-bg-color-collapsed: rgba(29, 29, 29, 0.95);
+$sidebar-color: #adadad;
+$highlight-color: #d8d8d8;
+$icon-bg-color: rgba(255, 255, 255, 0.05);
+$icon-size: 35px;
+
+@import "~react-pro-sidebar/dist/scss/styles.scss";
+body {
+  margin: 0px;
+  height: 100vh;
+  color: #353535;
+  font-family: "Roboto", sans-serif;
+}
+
+#root {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(239, 239, 242, 1) 0%,
+    rgba(247, 230, 216, 1) 61%,
+    rgba(244, 227, 202, 1) 100%
+  );
+}
+
+.app {
+  height: 100%;
+  display: flex;
+  position: relative;
+
+
+  
+  .BrandPara {
+    color: "#666666";
+    font-size: "18px";
+    padding: "0 0 25px";
+    margin: "0px";
+    display: "block";
+    margin-block-start: "1em";
+    margin-block-end: "1em";
+    margin-inline-start: "0px";
+    margin-inline-end: "0px";
+  }
+  #mu-header {
+    // background-color: white;
+    display: inline;
+    float: left;
+    width: 100%;
+    height: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  #mu-header .mu-header-area {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: inline;
+    float: left;
+    padding: 0;
+    width: 100%;
+  }
+
+  #mu-header .mu-header-area .mu-header-top-right {
+    display: inline;
+    float: left;
+    text-align: right;
+    width: 100%;
+  }
+  #mu-header .mu-header-area .mu-header-top-right .mu-top-social-nav {
+    display: inline-block;
+  }
+  #mu-header .mu-header-area .mu-header-top-right .mu-top-social-nav li {
+    display: inline-block;
+  }
+  #mu-header .mu-header-area .mu-header-top-right .mu-top-social-nav li a {
+    display: inline-block;
+    font-size: 14px;
+    padding: 0 8px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  @media (max-width: 640px) {
+    #mu-header .mu-header-area .mu-header-top-left {
+      display: none;
+    }
+    .mu-header-top-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      float: center;
+    }
+  }
+  .IconLinks {
+    color: #b6722d;
+  }
+
+  .main_COntainer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .Ticker {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #00203fff;
+    height: 30px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    align-items: center;
+    // border: 1px solid #00203FFF;
+
+    left: 1px;
+  }
+  .TickerHeader {
+    width: 10%;
+    display: flex;
+    height: 100%;
+    // padding-top: 5px;
+    align-items: center;
+    text-align: center;
+    // padding-bottom: 16px;
+    padding-left: 10px;
+    background-color: #4a4a4a;
+    color: #f1fff1;
+    position: relative;
+  }
+
+  .TickerContent {
+    height: 100%;
+    width: 90%;
+    text-align: center;
+    display: flex;
+    // justify-content: end;
+    align-items: center;
+    // margin: 0px;
+    padding-top: 15px;
+    background-color: #b6722d;
+    color: #f1fff1;
+    font-size: 15px;
+  }
+
+  // .TickerHeader::after {
+  //   position: absolute;
+  //   content: "";
+  //   right: -30%;
+  //   border-left: 20px solid #00203fff;
+  //   border-top: 20px solid transparent;
+  //   border-right: 18px solid transparent;
+  //   border-bottom: 20px solid transparent;
+  //   top: 0;
+
+  // }
+
+  .btn-toggle {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    // background: #312b28;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    // border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    position: relative;
+    // right: 100px;
+    // left: 660px;
+    display: none;
+  }
+  .classlogo {
+    margin-right: 8px;
+  }
+
+  .sidebar-btn-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .sidebar-btn {
+      padding: 1px 15px;
+      border-radius: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #adadad;
+      text-decoration: none;
+      margin: 0 auto;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      span {
+        margin-left: 5px;
+        font-size: 13px;
+      }
+      &:hover {
+        color: $highlight-color;
+      }
+    }
+  }
+
+  .collapsed {
+    .sidebar-btn {
+      display: inline-block;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      line-height: 40px;
+      padding: 0;
+    }
+  }
+
+  main {
+    padding: 10px 0px 9px 0px;
+    margin-top: 46px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    header {
+      margin-bottom: 10px;
+      // border-bottom: 1px solid #161515;
+      h1 {
+        display: flex;
+        align-items: center;
+        transform: translateX(-10px);
+      }
+    }
+
+  
+    
+    .ChildMain {
+      margin: 0px 0.5px 0px 0.5px;
+      background-size: cover;
+      background-attachment: fixed;
+      margin-bottom: 20px;
+    }
+
+    .MainSideAd {
+      margin: 0px;
+      padding: 0px;
+    }
+    .MainSideAd-div1 {
+      margin-top: 10px;
+    }
+    .MainSideAd-div2 {
+      margin-top: 5px;
+    }
+
+    footer {
+      margin-top: auto;
+      color: #888;
+      text-align: center;
+      a {
+        text-decoration: none;
+        color: #888;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .social-bagdes {
+    margin-top: 10px;
+    img {
+      margin: -10px;
+    }
+  }
+
+  .block {
+    display: flex;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: #545454;
+    > span {
+      margin-left: 10px;
+    }
+  }
+
+  &.rtl {
+    direction: rtl;
+    text-align: right;
+
+    header {
+      h1 {
+        transform: translateX(20px);
+      }
+    }
+    .block {
+      direction: rtl;
+      > span {
+        margin-left: 0;
+        margin-right: 10px;
+      }
+    }
+    .sidebar-btn-wrapper {
+      .sidebar-btn {
+        span {
+          margin-left: 0;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  .logo-class {
+    // background-color: #000000;
+    // padding: 20px;
+
+    // background:url('../assets/HeaderPhoto.jpg') no-repeat center ;
+    // background-size: cover;
+    // background-attachment: fixed;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0px;
+    margin-right: 0px important;
+    width: 100%;
+  }
+
+  @media (max-width: 767.98px) {
+    overflow-x: hidden;
+    header {
+      h1 {
+        font-size: 20px;
+        position: relative;
+        left: 5px;
+      }
+    }
+  }
+  @media (max-width: $breakpoint-md) {
+    .btn-toggle {
+      display: flex;
+      position: absolute;
+      right: 10px;
+      top: 70px;
+    }
+    .Ticker {
+      height: 30px;
+    }
+
+    .TickerContent {
+      font-size: 10px;
+    }
+
+    .classlogo {
+      width: 90px;
+    }
+    .Navigation {
+      position: fixed;
+      background-color: #adadad;
+      width: 100%;
+    }
+  }
+  @media (max-width: 360px) {
+    .classlogo {
+      width: 70px;
+    }
+
+    .btn-toggle {
+      position: absolute;
+      top: 58px;
+      font-size: 25px;
+    }
+    .Ticker {
+      height: 20px;
+    }
+    .TickerHeader {
+      font-size: 15px;
+    }
+    .TickerContent {
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width: 411px) {
+    .TickerContent {
+      font-size: 10px;
+    }
+  }
+  @media (max-width: 375px) {
+    .btn-toggle {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 280px) {
+    .classlogo {
+      width: 70px;
+      margin-left: 0px;
+    }
+    .btn-toggle {
+      position: absolute;
+      top: 10px;
+      right: 0px;
+      font-size: 20px;
+    }
+    .logo-class {
+      font-size: 15px;
+    }
+  }
+  @media (max-width: 1300px) {
+    .TickerHeader {
+      font-size: 12px;
+      // background-color: #000000;
+    }
+  }
+  @media (max-width: 1097px) {
+    .TickerHeader {
+      font-size: 9px;
+    }
+  }
+  @media (max-width: 604px) {
+    .TickerHeader {
+      width: 20%;
+    }
+    .TickerContent {
+      width: 80%;
+      font-size: 10px;
+    }
+  }
+  @media (max-width: 280px) {
+    .TickerHeader {
+      width: 28%;
+    }
+    .TickerContent {
+      width: 72%;
+      font-size: 10px;
+    }
+    .btn-toggle {
+      font-size: 5px;
+    }
+  }
+  @media (max-width: 320px) {
+    .TickerHeader {
+      width: 25%;
+    }
+    .TickerContent {
+      width: 75%;
+      // font-size: 5px;
+    }
+    .btn-toggle {
+      font-size: 17px;
+    }
+    .logo-class {
+      font-size: 18px;
+    }
+  }
+}
+
+.news {
+  width: 160px;
+}
+
+.news-scroll a {
+  text-decoration: none;
+}
+
+.dot {
+  height: 6px;
+  width: 6px;
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 2px !important;
+  background-color: rgb(207, 23, 23);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.badge {
+  padding: 3px 6px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  border-radius: 15px;
+  &.red {
+    color: #ffffff;
+    background: #d63030;
+  }
+  &.gray {
+    color: #ffffff;
+    background: #777777;
+  }
+  &.yellow {
+    color: #000000;
+    background: #ffd331;
+  }
+}
+.classlogo {
+  width: 120px;
+  padding-left: 20px;
+}
+
+
