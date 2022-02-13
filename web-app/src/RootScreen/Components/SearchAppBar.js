@@ -11,11 +11,11 @@ import { FaHome } from "react-icons/fa"; //Home
 import { ImBook } from "react-icons/im"; //library
 import { TiContacts } from "react-icons/ti"; //contact
 import { MdPermMedia } from "react-icons/md"; //Media
-import { AiFillInfoCircle } from "react-icons/ai"; //About Us
-import {
-  BsFillPeopleFill, // Khanwada Ashrafiya
-  BsFillPersonLinesFill, //Shijra
-} from "react-icons/bs";
+// import { AiFillInfoCircle } from "react-icons/ai"; //About Us
+// import {
+//   BsFillPeopleFill, // Khanwada Ashrafiya
+//   BsFillPersonLinesFill, //Shijra
+// } from "react-icons/bs";
 
 const SearchAppBar = ({ handleToggleSidebar, toggled }) => {
   let AppName;
@@ -24,20 +24,26 @@ const SearchAppBar = ({ handleToggleSidebar, toggled }) => {
   if (pathName === "/Contact") {
     AppName = "Contact Us";
   }
-  if (pathName === "/") {
+  else if (pathName === "/") {
     AppName = "Home";
   }
-  if (pathName === "/Library_SeratTyeba") {
+  else if (pathName === "/library/books") {
+    AppName = "Library/Books";
+  }
+  else if (pathName === "/library/articles") {
+    AppName = "Library/Articles";
+  }
+  else if (pathName === "/Library_MilladIbneKaseer") {
     AppName = "Library";
   }
-  if (pathName === "/Library_MilladIbneKaseer") {
+  else if (pathName === "/Library_hindustankaTazkirah") {
     AppName = "Library";
   }
-  if (pathName === "/Library_hindustankaTazkirah") {
-    AppName = "Library";
-  }
-  if (pathName === "/Gallery") {
+  else if (pathName === "/Gallery") {
     AppName = "Media";
+  }
+  else{
+    AppName = "Page Not Found"
   }
   let [val, setVal] = React.useState(true);
 
@@ -78,7 +84,9 @@ const SearchAppBar = ({ handleToggleSidebar, toggled }) => {
             <span>
               {pathName === "/" ? (
                 <FaHome />
-              ) : pathName === "/Library_SeratTyeba" ? (
+              ) : pathName === "/library/books" ? (
+                <ImBook />
+              ) : pathName === "/library/articles" ? (
                 <ImBook />
               ) : pathName === "/Library_MilladIbneKaseer" ? (
                 <ImBook />

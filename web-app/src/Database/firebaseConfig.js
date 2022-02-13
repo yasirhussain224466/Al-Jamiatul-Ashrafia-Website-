@@ -1,5 +1,4 @@
-// import { initializeApp } from "firebase/app"
-import firebase from 'firebase/app'
+import firebase from "firebase/app";
 
 const Config = {
   apiKey: "AIzaSyBXDF07W4GhovVOT1ElNnO_dFehYwJQck4",
@@ -8,9 +7,8 @@ const Config = {
   projectId: "al-jamiatul-ashrafia-58938",
   storageBucket: "al-jamiatul-ashrafia-58938.appspot.com",
   messagingSenderId: "1033604251516",
-  appId: "1:1033604251516:web:dfdb8cebc16a92efb2eef9"
-}
-firebase.initializeApp(Config)
-
+  appId: "1:1033604251516:web:dfdb8cebc16a92efb2eef9",
+};
+firebase.initializeApp(Config);
 
 export default firebase;

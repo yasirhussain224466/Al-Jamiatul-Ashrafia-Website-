@@ -16,15 +16,11 @@ import { AiFillInfoCircle } from "react-icons/ai";
 import { TiContacts } from "react-icons/ti";
 import { NavLink } from "react-router-dom";
 import { MdPermMedia } from "react-icons/md";
-import { useParams } from "react-router";
 
 const Aside = ({ collapsed, toggled, handleToggleSidebar }) => {
-
   const changeBoolean = () => {
     handleToggleSidebar(false);
   };
-  const { Contact } = useParams();
-  console.log(Contact);
   return (
     <ProSidebar
       image={sidebarBg}
@@ -84,28 +80,19 @@ const Aside = ({ collapsed, toggled, handleToggleSidebar }) => {
             <MenuItem>
               <NavLink
                 onClick={() => changeBoolean()}
-                to="/Library_SeratTyeba"
+                to="/library/books"
                 exact
               >
-                Seerat-e-Tyeba
+                Books
               </NavLink>
             </MenuItem>
             <MenuItem>
               <NavLink
                 onClick={() => changeBoolean()}
-                to="/Library_MilladIbneKaseer"
+                to="/library/articles"
                 exact
               >
-                Milaad Ibne Kaseeer
-              </NavLink>
-            </MenuItem>
-            <MenuItem>
-              <NavLink
-                onClick={() => changeBoolean()}
-                to="/Library_hindustankaTazkirah"
-                exact
-              >
-                Hindustan Ka Tazkirah
+                Articles
               </NavLink>
             </MenuItem>
           </SubMenu>
@@ -115,6 +102,11 @@ const Aside = ({ collapsed, toggled, handleToggleSidebar }) => {
                 Gallery
               </NavLink>
             </MenuItem>
+            <MenuItem>
+              <NavLink onClick={() => changeBoolean()} exact to="/Gallery">
+                Videos
+              </NavLink>
+            </MenuItem>
           </SubMenu>
           <SubMenu
             // prefix={<span className="badge gray">3</span>}
@@ -122,54 +114,220 @@ const Aside = ({ collapsed, toggled, handleToggleSidebar }) => {
             icon={<BsFillPeopleFill />}
           >
             <MenuItem>
-              <a href="">Makhdoom Pak</a>
+              <NavLink onClick={() => changeBoolean()} exact to="/Makhdoom Pak">
+                Makhdoom Pak
+              </NavLink>
+            </MenuItem>
+            {/* <MenuItem>
+              <NavLink onClick={() => changeBoolean()} exact to="/">Norr ul Ain</NavLink>
             </MenuItem>
             <MenuItem>
-              <a href="">Norr ul Ain</a>
+              <NavLink onClick={() => changeBoolean()} exact to="/">Shaikh-e-Tareeqat</NavLink>
             </MenuItem>
             <MenuItem>
-              <a href="">Shaikh-e-Tareeqat</a>
+              <NavLink onClick={() => changeBoolean()} exact to="/">Kaleem ul Awliya</NavLink>
             </MenuItem>
             <MenuItem>
-              <a href="">Kaleem ul Awliya</a>
+              <NavLink onClick={() => changeBoolean()} exact to="/">Jamal-e-Millat</NavLink>
             </MenuItem>
             <MenuItem>
-              <a href="">Jamal-e-Millat</a>
-            </MenuItem>
-            <MenuItem>
-              <a href="">Dr Syed Aleem Ashraf</a>
-            </MenuItem>
+              <NavLink onClick={() => changeBoolean()} exact to="/">Dr Syed Aleem Ashraf</NavLink>
+            </MenuItem> */}
           </SubMenu>
-          <SubMenu title="Shijra" icon={<BsFillPersonLinesFill />}>
+          <SubMenu title="Shijra Shareef" icon={<BsFillPersonLinesFill />}>
             <MenuItem>
-              <a href="">Nasab Nama Noor Makhdoom Pak</a>
+              <NavLink
+                onClick={() => changeBoolean()}
+                exact
+                to="/Nasab_Nama_Noor_Makhdoom_Pak"
+              >
+                Nasab Nama Noor Makhdoom Pak
+              </NavLink>
             </MenuItem>
             <MenuItem>
-              <a href="">Nasab Nama Noor ul Ain</a>
+              <NavLink
+                onClick={() => changeBoolean()}
+                exact
+                to="/Nasab_Nama_Noor_ul_Ain"
+              >
+                Nasab Nama Noor ul Ain
+              </NavLink>
+            </MenuItem>
+            <SubMenu title="Shijra Hazrat Syed Kaleem Ashraf Jilani">
+              <MenuItem>
+                <NavLink
+                  onClick={() => changeBoolean()}
+                  exact
+                  to="/shijra_hazrat_syed_kaleem_ashraf_jilani/english"
+                >
+                  English Language
+                </NavLink>
+              </MenuItem>
+              <MenuItem>
+                <NavLink
+                  onClick={() => changeBoolean()}
+                  exact
+                  to="/shijra_hazrat_syed_kaleem_ashraf_jilani/urdu"
+                >
+                  Urdu Language
+                </NavLink>
+              </MenuItem>
+              <MenuItem>
+                <NavLink
+                  onClick={() => changeBoolean()}
+                  exact
+                  to="/shijra_hazrat_syed_kaleem_ashraf_jilani/bangla"
+                >
+                  Bangla Language
+                </NavLink>
+              </MenuItem>
+              <MenuItem>
+                <NavLink
+                  onClick={() => changeBoolean()}
+                  exact
+                  to="/shijra_hazrat_syed_kaleem_ashraf_jilani/creole"
+                >
+                  Creole Language
+                </NavLink>
+              </MenuItem>
+            </SubMenu>
+            <SubMenu title="Shajra Hazrat Syed Naseem Ashraf Jilani">
+              <MenuItem>
+                <NavLink
+                  onClick={() => changeBoolean()}
+                  exact
+                  to="/shajra_hazrat_syed_naseem_ashraf_jilani/english"
+                >
+                  English Language
+                </NavLink>
+              </MenuItem>
+              <MenuItem>
+                <NavLink
+                  onClick={() => changeBoolean()}
+                  exact
+                  to="/shajra_hazrat_syed_naseem_ashraf_jilani/urdu"
+                >
+                  Urdu Language
+                </NavLink>
+              </MenuItem>
+              <MenuItem>
+                <NavLink
+                  onClick={() => changeBoolean()}
+                  exact
+                  to="/shajra_hazrat_syed_naseem_ashraf_jilani/bangla"
+                >
+                  Bangla Language
+                </NavLink>
+              </MenuItem>
+              <MenuItem>
+                <NavLink
+                  onClick={() => changeBoolean()}
+                  exact
+                  to="/shajra_hazrat_syed_naseem_ashraf_jilani/creole"
+                >
+                  Creole Language
+                </NavLink>
+              </MenuItem>
+            </SubMenu>
+            <SubMenu title="Shajra Hazrat Syed Qaseem Hasan Ashraf Jilani">
+              <MenuItem>
+                <NavLink
+                  onClick={() => changeBoolean()}
+                  exact
+                  to="/shajra_hazrat_syed_qaseem_hassan_ashraf_jilani/english"
+                >
+                  English Language
+                </NavLink>
+              </MenuItem>
+              <MenuItem>
+                <NavLink
+                  onClick={() => changeBoolean()}
+                  exact
+                  to="/shajra_hazrat_syed_qaseem_hassan_ashraf_jilani/urdu"
+                >
+                  Urdu Language
+                </NavLink>
+              </MenuItem>
+              <MenuItem>
+                <NavLink
+                  onClick={() => changeBoolean()}
+                  exact
+                  to="/shajra_hazrat_syed_qaseem_hassan_ashraf_jilani/bangla"
+                >
+                  Bangla Language
+                </NavLink>
+              </MenuItem>
+              <MenuItem>
+                <NavLink
+                  onClick={() => changeBoolean()}
+                  exact
+                  to="/shajra_hazrat_syed_qaseem_hassan_ashraf_jilani/creole"
+                >
+                  Creole Language
+                </NavLink>
+              </MenuItem>
+            </SubMenu>
+            <SubMenu title="Shajra Hazrat Syed Jamal Ashraf Jilani">
+              <MenuItem>
+                <NavLink
+                  onClick={() => changeBoolean()}
+                  exact
+                  to="/shajra_hazrat_syed_jamal__ashraf_jilani/english"
+                >
+                  English Language
+                </NavLink>
+              </MenuItem>
+              <MenuItem>
+                <NavLink
+                  onClick={() => changeBoolean()}
+                  exact
+                  to="/shajra_hazrat_syed_jamal__ashraf_jilani/urdu"
+                >
+                  Urdu Language
+                </NavLink>
+              </MenuItem>
+              <MenuItem>
+                <NavLink
+                  onClick={() => changeBoolean()}
+                  exact
+                  to="/shajra_hazrat_syed_jamal__ashraf_jilani/bangla"
+                >
+                  Bangla Language
+                </NavLink>
+              </MenuItem>
+              <MenuItem>
+                <NavLink
+                  onClick={() => changeBoolean()}
+                  exact
+                  to="/shajra_hazrat_syed_jamal__ashraf_jilani/creole"
+                >
+                  Creole Language
+                </NavLink>
+              </MenuItem>
+            </SubMenu>
+            {/* <MenuItem>
+              <NavLink onClick={() => changeBoolean()} exact >Shijra (Urdu Language)</NavLink>
             </MenuItem>
             <MenuItem>
-              <a href="">Shijra (Urdu Language)</a>
+              <NavLink onClick={() => changeBoolean()} exact >Shijra (English Language)</NavLink>
             </MenuItem>
             <MenuItem>
-              <a href="">Shijra (English Language)</a>
-            </MenuItem>
-            <MenuItem>
-              <a href="">Shijra (Bangla Language)</a>
-            </MenuItem>
+              <NavLink href="">Shijra (Bangla Language)</NavLink>
+            </MenuItem> */}
           </SubMenu>
           <SubMenu title="About Us" icon={<AiFillInfoCircle />}>
-            <MenuItem>
-              <a href="">History and Timeline </a>
+            {/* <MenuItem>
+              <NavLink onClick={() => changeBoolean()} exact to="/">History and Timeline </NavLink>
             </MenuItem>
             <MenuItem>
-              <a href="">Vission,Mission and Core Values</a>
+              <NavLink onClick={() => changeBoolean()} exact to="/">Vission,Mission and Core Values</NavLink>
             </MenuItem>
             <MenuItem>
-              <a href="">International Linkage</a>
+              <NavLink onClick={() => changeBoolean()} exact to="/">International Linkage</NavLink>
             </MenuItem>
             <MenuItem>
-              <a href="">Management</a>
-            </MenuItem>
+              <NavLink onClick={() => changeBoolean()} exact to="/">Management</NavLink>
+            </MenuItem> */}
           </SubMenu>
 
           <MenuItem icon={<TiContacts />}>

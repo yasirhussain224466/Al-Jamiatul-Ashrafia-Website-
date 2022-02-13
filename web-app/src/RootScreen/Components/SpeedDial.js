@@ -4,7 +4,6 @@ import SpeedDialIcon from "@mui/material/SpeedDialIcon";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
 import { SiWhatsapp, SiInstagram, SiTwitter } from "react-icons/si";
 import { FaFacebookF } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import { AiOutlineYoutube } from "react-icons/ai";
 
 const Dial = () => {
@@ -26,15 +25,16 @@ const Dial = () => {
           FabProps={{ style: { backgroundColor: "#FF0000" } }}
           key="Youtube"
           icon={
-            <Link
+            <a
               target="_blank"
               href="https://www.youtube.com/channel/UC6Rs9c3zZgvYwDq9m2T3smQ"
+              rel="noreferrer"
             >
               {" "}
               <AiOutlineYoutube
                 style={{ fontSize: "25px", color: "#f1f1f1" }}
               />
-            </Link>
+            </a>
           }
           tooltipTitle="Youtube"
           onClick={handleClose}
@@ -49,12 +49,12 @@ const Dial = () => {
           }}
           key="Instagram"
           icon={
-            <Link
+            <a
               target="_blank"
-              href="https://www.instagram.com/syed_jamal_ashraf_official/?utm_medium=copy_link"
+              href="https://www.instagram.com/syed_jamal_ashraf_official/?utm_medium=copy_link" rel="noreferrer"
             >
               <SiInstagram style={{ fontSize: "25px", color: "#f1f1f1" }} />
-            </Link>
+            </a>
           }
           tooltipTitle="Instagram"
           onClick={handleClose}
@@ -63,9 +63,9 @@ const Dial = () => {
           FabProps={{ style: { backgroundColor: "#1DA1F2" } }}
           key="Twitter"
           icon={
-            <Link target="_blank" href="https://twitter.com/infoashrafia7?s=09">
+            <a target="_blank" href="https://twitter.com/infoashrafia7?s=09" rel="noreferrer">
               <SiTwitter style={{ fontSize: "25px", color: "#f1f1f1" }} />
-            </Link>
+            </a>
           }
           tooltipTitle="Twitter"
           onClick={handleClose}
@@ -74,13 +74,13 @@ const Dial = () => {
           FabProps={{ style: { backgroundColor: "#4267B2" } }}
           key="Facebook"
           icon={
-            <Link
+            <a
               target="_blank"
-              href="https://www.facebook.com/profile.php?id=100008217362725"
+              href="https://www.facebook.com/profile.php?id=100008217362725" rel="noreferrer"
             >
               {" "}
               <FaFacebookF style={{ fontSize: "25px", color: "#f1f1f1" }} />
-            </Link>
+            </a>
           }
           tooltipTitle="Facebook"
           onClick={handleClose}
@@ -89,12 +89,12 @@ const Dial = () => {
           FabProps={{ style: { backgroundColor: "#25D366" } }}
           key="Whatsapp"
           icon={
-            <Link
+            <a
               target="_blank"
-              href="https://chat.whatsapp.com/Jcvdz3av0lB83VEjZJyESx"
+              href="https://chat.whatsapp.com/Jcvdz3av0lB83VEjZJyESx" rel="noreferrer"
             >
               <SiWhatsapp style={{ fontSize: "25px", color: "#f1f1f1" }} />
-            </Link>
+            </a>
           }
           tooltipTitle="Whatsapp"
           onClick={handleClose}
