@@ -181,7 +181,7 @@ const HomeText = () => {
           </Button>
         </div>
 
-        <div>
+        <div >
           <h2 className={classess.BrandHeading}>Mission</h2>
         </div>
         <div>

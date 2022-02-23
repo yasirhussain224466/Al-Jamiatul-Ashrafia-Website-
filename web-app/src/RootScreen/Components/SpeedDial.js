@@ -76,7 +76,7 @@ const Dial = () => {
           icon={
             <a
               target="_blank"
-              href="https://www.facebook.com/profile.php?id=100008217362725" rel="noreferrer"
+              href="https://www.facebook.com/SyedJamalAshrafOfficial" rel="noreferrer"
             >
               {" "}
               <FaFacebookF style={{ fontSize: "25px", color: "#f1f1f1" }} />
@@ -91,7 +91,7 @@ const Dial = () => {
           icon={
             <a
               target="_blank"
-              href="https://chat.whatsapp.com/Jcvdz3av0lB83VEjZJyESx" rel="noreferrer"
+              href="https://chat.whatsapp.com/D6oVnmAzSF15cAnfbTb3TU" rel="noreferrer"
             >
               <SiWhatsapp style={{ fontSize: "25px", color: "#f1f1f1" }} />
             </a>

@@ -90,12 +90,13 @@ const useStyle = makeStyles({
     marginBottom: "10px",
     borderRadius: "10px",
   },
+
 });
 const initialValue = {
   Email: "",
   FullName: "",
   FatherName: "",
-  Age: "",
+  Book: "",
   Country: "",
   Gender: "",
   MureedTalib: "",
@@ -103,7 +104,7 @@ const initialValue = {
   Message: "",
 };
 
-const Mureed = () => {
+const BookModal = (props) => {
   const [show, setShow] = useState(false);
   const [translate, setTranslate] = useState(false);
 
@@ -116,11 +117,18 @@ const Mureed = () => {
   };
   const classes = useStyle();
 
+  const BookList = [
+    {
+      value: `${props.BookTitle}`,
+      label: `${props.BookTitle}`,
+    }
+  ];
+
   const {
     Email,
     FullName,
     FatherName,
-    Age,
+    Book,
     Country,
     Gender,
     MureedTalib,
@@ -130,17 +138,18 @@ const Mureed = () => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        <img
-          style={{
-            borderRadius: "15px",
-            width: "100%",
-            padding: "5px",
-            border: "3px solid #b6722d",
-          }}
-          src={image}
-          alt=""
-        />
+      <Button
+        onClick={handleShow}
+        style={{
+          backgroundColor: "white",
+          color: "#b6722d",
+          fontWeight: "bold",
+        }}
+        type="submit"
+        fullWidth
+        variant="contained"
+      >
+        To get it
       </Button>
 
       <Modal
@@ -149,32 +158,21 @@ const Mureed = () => {
         backdrop="static"
         keyboard={false}
         centered
-        className={classes.backgroundModal}
+        className='backgroundModal'
       >
         <div className={classes.inputfeild}>
-          <Modal.Header>
-            <Typography variant="h6" gutterBotton>
-              <Modal.Title>
-                <div className={classes.heading}>Become a Mureed </div>
-              </Modal.Title>
-            </Typography>
-          </Modal.Header>
           <div className={classes.DivBorder}>
             {translate ? (
               <div>
-                اس سروس کے ذریعےماہانہ ہزاروں نام”عطاری“بننے کے لئے موصول ہوتے
-                ہیں جنہیں امیرِ اہلسنت دَامَتْ بَرَکَاتُہُمُ الْعَالِیَہ کے
-                سلسلے میں داخل کرکے رپلائی کے طور پرامیرِ اہلسنتدَامَتْ
-                بَرَکَاتُہُمُ الْعَالِیَہ کا مکتوب(Letter) بھی ای میل کیا جاتا
-                ہے۔
+                اگر آپ "<b>{props.BookTitleUrdu}</b>" کتاب حاصل کرنا چاہتے ہیں تو آپ کو یہ فارم
+                پُر کرنا ہوگا۔ ہماری ٹیم آپ کو یہ کتاب آپ کے ای میل ایڈریس کے
+                ذریعے بھیجے گی۔{" "}
               </div>
             ) : (
               <div>
-                Through this service, we receive thousands of names every month
-                to become a Mureed of Ameer-e-Ahlesunnat. They are entered into
-                the Attaria spiritual order and a letter of Ameer-e-Ahlesunnat
-                دَامَـتْ بَـرَكَـاتُـهُـمُ الْـعَـالِـيَـهْ also mailed to them
-                as a reply.
+                If you want to get the <b> "{props.BookTitle}"</b> book then you
+                will have to fill out this form. Our Team will send you this
+                book through your Email Address.
               </div>
             )}
 
@@ -188,7 +186,7 @@ const Mureed = () => {
               sx={{ mt: 3, mb: 2 }}
               onClick={() => setTranslate(!translate)}
             >
-              {translate ? "English" : "اردو"}
+              {translate ? "translate into English" : "اردو میں ترجمہ دیکھیں"}
             </Button>
           </div>
 
@@ -238,8 +236,7 @@ const Mureed = () => {
                 onChange={(e) => OnChangeUser(e)}
               />
             </Grid>
-
-            <Grid item xs={12} sm={6}>
+            {/* <Grid item xs={12} sm={6}>
               <TextField
                 className={classes.field}
                 id="Age"
@@ -250,18 +247,29 @@ const Mureed = () => {
                 variant="standard"
                 onChange={(e) => OnChangeUser(e)}
               />
-            </Grid>
+            </Grid> */}
+
             <Grid item xs={12} sm={6}>
-              <TextField
+            <TextField
+                id="standard-select-Mureed"
                 className={classes.field}
-                id="Country"
-                value={Country}
-                name="Country"
-                label="Country"
+                required
+                select
                 fullWidth
+                value={Book}
+                name="Book"
+                label="Select Book"
+                onChange={(e) => {
+                  OnChangeUser(e);
+                }}
                 variant="standard"
-                onChange={(e) => OnChangeUser(e)}
-              />
+              >
+                {BookList.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -287,64 +295,17 @@ const Mureed = () => {
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                id="standard-select-Mureed"
                 className={classes.field}
-                required
-                select
+                id="Country"
+                value={Country}
+                name="Country"
+                label="Country"
                 fullWidth
-                value={MureedTalib}
-                name="MureedTalib"
-                label="Mureed/Talib"
-                onChange={(e) => {
-                  OnChangeUser(e);
-                }}
-                variant="standard"
-              >
-                {Mureed_Talib.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                id="standard-select-Sheikh"
-                className={classes.field}
-                select
-                fullWidth
-                required
-                value={Sheikh}
-                name="Sheikh"
-                label="Sheikh"
-                onChange={(e) => {
-                  OnChangeUser(e);
-                }}
-                variant="standard"
-              >
-                {Sheikh_Option.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
-            </Grid>
-
-            <Grid item xs={12}>
-              <TextField
-                required
-                className={classes.field}
-                // margin='normal'
-                id="message"
-                value={Message}
-                name="Message"
-                label="Message"
-                fullWidth
-                autoComplete="Message"
                 variant="standard"
                 onChange={(e) => OnChangeUser(e)}
               />
             </Grid>
+                  
 
             <Grid item xs={6}>
               <Button
@@ -376,4 +337,4 @@ const Mureed = () => {
   );
 };
 
-export default Mureed;
+export default BookModal;

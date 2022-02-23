@@ -114,7 +114,7 @@ const Aside = ({ collapsed, toggled, handleToggleSidebar }) => {
             icon={<BsFillPeopleFill />}
           >
             <MenuItem>
-              <NavLink onClick={() => changeBoolean()} exact to="/Makhdoom Pak">
+              <NavLink onClick={() => changeBoolean()} exact to="/makhdoom_pak">
                 Makhdoom Pak
               </NavLink>
             </MenuItem>

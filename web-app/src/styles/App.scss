@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Redressed&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap"&family=Lemonada:wght@300&family=M+PLUS+Rounded+1c&family=Redressed&family=Tangerine:wght@700&display=swap');
 
 $sidebar-bg-color: #1d1d1d;
 $submenu-bg-color: rgba(255, 255, 255, 0.05);
@@ -25,6 +27,7 @@ body {
     rgba(244, 227, 202, 1) 100%
   );
 }
+
 
 .app {
   height: 100%;
@@ -216,8 +219,8 @@ body {
   }
 
   main {
-    padding: 10px 0px 9px 0px;
-    margin-top: 46px;
+    padding: 0px 0px 0px 0px;
+    margin-top: 45px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -498,22 +501,23 @@ body {
   img {
     // height: auto;
     // width: 80%;
-    transform: rotateX(10deg) rotateY(-18deg) rotate(3deg);
-    border-radius: 0.25em;
-    box-shadow: 2px 10px 30px hsla(0, 0%, 0%, 0.25);
+    // transform: rotateX(10deg) rotateY(-18deg) rotate(3deg);
+    border-radius: 0.5em;
+    box-shadow: 2px 10px 100px hsla(221, 95%, 15%, 0.5);
     transition: 0.3s;
+    // height: 220 !important;
   }
   &:hover img {
-    transform: rotate(0);
+    // transform: rotate(0);
   }
 }
 
-.imgSection{
+.imgSection {
   position: relative;
   margin: 0px;
   padding: 0px;
 }
-.cardImg{
+.cardImg {
   position: absolute;
   margin: 0px;
   top: 7px;
@@ -525,32 +529,29 @@ body {
   /* border: 1px solid red; */
 }
 
-.contSection{
+.contSection {
   position: relative;
   margin: 0px;
   padding: 0px;
 }
-.cardPrice{
+.cardPrice {
   position: absolute;
   top: 145px;
   left: 15px;
   margin: 0px;
   padding: 0px;
   color: black;
-  
 }
-.cardName{
+.cardName {
   position: absolute;
   top: 170px;
   left: 15px;
   margin: 0px;
   padding: 0px;
   color: rgb(121, 121, 121);
-  font-family:Arial, Helvetica, sans-serif;
-  
+  font-family: Arial, Helvetica, sans-serif;
 }
-.cardBox
-{
+.cardBox {
   position: absolute;
   top: 140px;
   height: 111px;
@@ -560,14 +561,198 @@ body {
   padding: 0px;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
-  
 }
-.cardDate{
+.cardDate {
   position: absolute;
-  top: 232px; 
+  top: 232px;
   left: 225px;
   font-size: 12px;
   color: rgb(111, 111, 112);
   margin: 0px;
   padding: 0px;
+}
+
+.MUiCard {
+  // border: 1px solid #1d1d1d;
+  margin: 25px;
+  padding: 10px;
+  border: 3px solid #e9dccf;
+  box-shadow: 2px 10px 30px hsla(0, 0%, 0%, 0.5) !important;
+  background-color: #dad3c7 !important;
+}
+.GridContainer {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.GridItem {
+}
+
+.MuiCardImage {
+  padding: 8px;
+  border: 3px solid #b6722d;
+  border-radius: 14px;
+  margin: 0px;
+}
+
+.MUITitle {
+  text-decoration: none !important;
+  font-family: sans-serif !important;
+  font-size: 19px !important;
+  font-weight: 600 !important;
+}
+
+.MUICardLink {
+  text-decoration: none !important;
+  color: #5f3103;
+}
+.MUICardLink:hover {
+  color: #221f1b;
+}
+
+.BookDescriptionContainer {
+  width: 100% !important;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgb(252, 216, 163) 0%,
+    rgb(250, 218, 192) 61%,
+    rgba(244, 227, 202, 1) 100%
+  );
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+}
+
+.BookContainer {
+  width: 100%;
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
+.BookTransition {
+  perspective: 1500px;
+  height: 520px;
+  width: 25%;
+  transform: rotateX(18deg) rotateY(-20deg) rotateZ(3deg);
+  border-radius: 0.7em;
+  box-shadow: 2px 10px 100px hsla(0, 0%, 1%, 0.5);
+  transition: 0.3s;
+  // height: 220 !important;
+  position: absolute;
+  top: 12vh !important;
+  bottom: 10vh;
+  right: 60vw;
+  left: 11vw;
+}
+.BookTransition:hover {
+  transform: rotate(0);
+}
+
+.BookDetal {
+  z-index: 1;
+  width: 50%;
+  height: 85vh;
+  background-color: #b6722d;
+  position: relative;
+  left: 26.5vw;
+  top: 0.4vh;
+  border-top-left-radius: 39px;
+  border-bottom-right-radius: 39px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 50px 0px 50px 0px;
+  color: white;
+  box-shadow: 2px 10px 40px hsla(0, 0%, 1%, 0.5);
+}
+
+.BookImage {
+  z-index: 2;
+}
+
+.BookInformationHead {
+  font-family: "Lemonada", cursive !important;
+  font-size: 26px !important;
+  margin-left: 55px !important;
+  font-style: oblique;
+  text-shadow: 8px 10px 10px hsla(0, 0%, 1%, 0.5) !important;
+}
+
+.BookInformation {
+  padding-left: 30px;
+  margin: 17px !important;
+  border-radius: 10%;
+}
+
+.BookInformationCon {
+  padding-left: 80px;
+  margin: 60px 10px 10px 10px !important;
+}
+
+.BookDetailhead {
+  font-family: "Redressed", cursive;
+  font-size: 30px !important;
+}
+
+.BookInformation {
+  font-family: "Marcellus SC", serif !important;
+  font-size: 20px !important;
+}
+
+.BookBottom {
+  display: flex;
+  position: absolute;
+  right: 13%;
+  left: 13%;
+  bottom: 25px;
+  // margin: 40px;
+  width: 75%;
+}
+
+// .BookGlide {
+//   width:24px !important;
+//   height:24px !important;
+//   position:relative !important;
+//   -webkit-animation: glide 2s ease-in-out alternate infinite !important;
+// }
+
+// @-webkit-keyframes glide  {
+//   from {
+//      left:0px !important;
+//      top:0px !important;
+//   }
+
+//   to {
+//      left:0px !important;
+//      top:90px !important;
+//   }
+
+// }
+
+.backgroundModal {
+  // background-color: rgba(39, 34, 26, 0.7) !important;
+  // backdrop-filter:
+}
+
+
+// .object {
+//   animation: MoveUpDown 2s linear infinite;
+//   position: relative;
+//   left: 0;
+//   bottom: 0;
+// }
+
+// @keyframes MoveUpDown {
+//   0%, 100% {
+//     bottom: 0;
+//   }
+//   40% {
+//     bottom: 10px;
+//   }
+// }
+
+.MakhdoomImg{
+  width: 100%;
 }
