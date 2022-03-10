@@ -28,11 +28,17 @@ body {
   );
 }
 
-
+// @media screen and (min-width: 900px) {
+//   .pro-sidebar.md{
+//     display: none;
+//   }
+// }
 .app {
   height: 100%;
   display: flex;
   position: relative;
+
+  
 
   .BrandPara {
     color: "#666666";
@@ -755,4 +761,19 @@ body {
 
 .MakhdoomImg{
   width: 100%;
+}
+
+.TextStyleHead{
+  font-size: 24px !important;
+  padding: 5px;
+}
+
+.TextStylePara{
+  font-style: normal;
+  font-size:18px;;
+}
+
+
+.TextStylePara > ul > li{
+  list-style: none;
 }

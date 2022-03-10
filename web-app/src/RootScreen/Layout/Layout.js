@@ -3,6 +3,7 @@ import Aside from "./Aside/Aside";
 import Main from "./Main/Main";
 import SearchAppBar from "../Components/SearchAppBar";
 import SpeedDial from "../Components/SpeedDial";
+import { Grid } from "@mui/material";
 
 function Layout() {
   // const [rtl, setRtl] = useState(false);
@@ -30,22 +31,23 @@ function Layout() {
       />
 
       <div className={`app ${toggled ? "toggled" : ""}`}>
-        <div>
-          <Aside
-            image={image}
-            collapsed={collapsed}
-            toggled={toggled}
-            handleToggleSidebar={handleToggleSidebar}
-          />
-        </div>
-
+      
+            <Aside
+              image={image}
+              collapsed={collapsed}
+              toggled={toggled}
+              handleToggleSidebar={handleToggleSidebar}
+            />
+            {console.log(toggled)}
+          {/* </Grid> */}
+        
+        
         <Main
           image={image}
           toggled={toggled}
           collapsed={collapsed}
           handleToggleSidebar={handleToggleSidebar}
           handleCollapsedChange={handleCollapsedChange}
-          // handleRtlChange={handleRtlChange}
           handleImageChange={handleImageChange}
         />
       </div>

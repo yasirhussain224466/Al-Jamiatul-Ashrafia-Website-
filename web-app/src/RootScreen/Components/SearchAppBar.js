@@ -98,9 +98,7 @@ const SearchAppBar = ({ handleToggleSidebar, toggled }) => {
                 <TiContacts />
               ) : null}
 
-              {/* //  <AiFillInfoCircle/>
-              //  <BsFillPeopleFill/>
-              //  <BsFillPersonLinesFill/> */}
+              
             </span>{" "}
             <span>{AppName}</span>
           </Typography>
